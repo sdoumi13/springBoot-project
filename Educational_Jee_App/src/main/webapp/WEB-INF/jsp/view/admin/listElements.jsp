@@ -3,53 +3,162 @@
 <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/security/tags"%>
 
-<jsp:include page="../fragments/adminHeader.jsp" />
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Éléments Pédagogiques</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <jsp:include page="../fragments/menu.jsp" />
+    <style>
+        /* Centrage général */
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Conteneur du tableau */
+        .table-container {
+            max-width: 1000px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Barre de recherche centrée */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            width: 60%;
+            max-width: 500px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        /* Style du tableau */
+        .table th {
+            background-color: #212529;
+            color: white;
+            text-align: center;
+        }
+
+        .table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f8f9fa;
+        }
+
+        /* Boutons d'actions */
+        .btn-action {
+            font-size: 14px;
+            padding: 6px 12px;
+            border-radius: 5px;
+        }
+
+        /* Footer bien aligné */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Inclusion de la navbar -->
+    <jsp:include page="../fragments/menu.jsp" />
+
+    <div class="table-container">
+        <h3 class="text-center mb-4">
+            <i class="fas fa-folder-open"></i> Liste des Éléments Pédagogiques
+        </h3>
+
+        <!-- Barre de recherche centrée -->
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="🔎 Rechercher un élément..." id="searchInput">
         </div>
-    </nav>
 
-    <div>
-        <h3>Liste des éléments pédagogiques</h3>
-    </div>
-
-    <div>
-        <p style="text-align:right">
-            <a href="${pageContext.request.contextPath}/admin/exportElements">
-                <img src="${pageContext.request.contextPath}/resources/img/excel.png" width="30"> Exporter Excel
+        <!-- Export Excel -->
+        <p class="text-end">
+            <a href="${pageContext.request.contextPath}/admin/exportElements" class="btn btn-success">
+                📂 Exporter en Excel
             </a>
         </p>
-        
-        <table class="table">
+
+        <!-- Tableau stylisé -->
+        <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Niveau</th>
-                    <th scope="col">Type Element</th>
-                    <th scope="col">Titre</th>
-                     <th scope="col">Enseignant Identifiant</th>
+                    <th>Niveau</th>
+                    <th>Type Élément</th>
+                    <th>Titre</th>
+                    <th>Enseignant ID</th>
                     <th>Actions</th>
                 </tr>
             </thead>
-
-            <c:forEach items="${elementList}" var="p">
-                <tr>
-                    <td><c:out value="${p.niveau}" /></td>
-                    <td><c:out value="${p.typeElement}" /></td>
-                    <td><c:out value="${p.titre}" /></td>
-                    <td><c:out value="${p.idPersonne}" /></td>
-                    <td>
-                        <ul>
-                            <li><a href="${pageContext.request.contextPath}/admin/deleteElement/${p.idElement}" class="btn btn-danger">Delete</a></li>
-                            <li><a href="${pageContext.request.contextPath}/admin/updateEleForm/${p.idElement}" class="btn btn-warning">Update</a></li>
-                        </ul>
-                    </td>
-                </tr>
-            </c:forEach>
+            <tbody id="elementTable">
+                <c:forEach items="${elementList}" var="p">
+                    <tr>
+                        <td><c:out value="${p.niveau}" /></td>
+                        <td><c:out value="${p.typeElement}" /></td>
+                        <td><c:out value="${p.titre}" /></td>
+                        <td><c:out value="${p.idPersonne}" /></td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/admin/updateEleForm/${p.idElement}"
+                               class="btn btn-warning btn-sm btn-action">
+                                ✏ Modifier
+                            </a>
+                            <a href="${pageContext.request.contextPath}/admin/deleteElement/${p.idElement}"
+                               class="btn btn-danger btn-sm btn-action">
+                                🗑 Supprimer
+                            </a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </tbody>
         </table>
     </div>
 
-    <jsp:include page="../fragments/adminfooter.jsp" />
-</div>
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 - FSTT - Tous droits réservés
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("searchInput").addEventListener("keyup", function() {
+            const input = this.value.toLowerCase();
+            const rows = document.querySelectorAll("#elementTable tr");
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(input) ? "" : "none";
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <div class="col-6" style="margin-top:100px">
-	<p>ENSAH 2023/2024</p>
+	<p>FSTT 2024/2025</p>
 </div>
 </div>
 <!-- JavaScript Bundle with Popper -->

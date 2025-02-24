@@ -40,6 +40,14 @@ sidebar-image {
 body {
   min-height: 100vh;
   background: #F0F4FF;
+.sidebar {
+    background: linear-gradient(135deg, #0a192f, #1c3d5a);
+}
+.sidebar-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
 }
 
 .sidebar {
@@ -159,10 +167,85 @@ body {
 .sidebar:hover .sub-menu {
   display: block;
 }
+.logout-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    color: #ff5757;
+    transform: scale(1.05);
+}
+/* Effet d’icône animé au survol */
+.sidebar-links li a .material-symbols-outlined {
+    margin-right: 10px;
+    font-size: 22px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-links li a:hover .material-symbols-outlined {
+    transform: rotate(20deg) scale(1.2);
+}
+
+/* Animation fluide des sous-menus */
+.sub-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.sub-menu.show {
+    max-height: 500px; /* Ajuster selon le contenu */
+    opacity: 1;
+}
+
+/* Effet de survol */
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    border-radius: 6px;
+}
+
+.sidebar-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+/* Animation du bouton logout */
+.logout-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    color: #ff5757;
+    transform: scale(1.1);
+}
 
 
 
- 
+
+
 /*:root {
   --blue: #007bff;
   --indigo: #6610f2;

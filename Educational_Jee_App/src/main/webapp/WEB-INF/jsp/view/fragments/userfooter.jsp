@@ -1,5 +1,5 @@
 <div class="col-6" style="margin-top:100px">
-	<p>T. BOUDAA, ENSAH 2023/2024</p>
+	<p>A. Mahboub, FSTT 2023/2024</p>
 </div>
 </div>
 <!-- JavaScript Bundle with Popper -->
