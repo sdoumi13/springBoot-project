@@ -33,16 +33,16 @@ This is a **Spring Boot MVC** application designed for managing exams in an educ
 
 ## 🛠 Technologies Used
 
-| Technology       | Description |
-|-----------------|-------------|
-| **Spring Boot** | Backend framework |
-| **Spring Security** | Authentication & Authorization |
-| **Spring Data JPA** | ORM for PostgreSQL |
-| **PostgreSQL** | Database management |
-| **JSP & Bootstrap** | Frontend UI |
-| **Maven** | Dependency management |
-| **JWT** | Secure authentication |
-| **Hibernate** | ORM for database handling |
+| Technology       | Description | Official Website |
+|-----------------|-------------|------------------|
+| **[Spring Boot](https://spring.io/projects/spring-boot)** | Backend framework | [spring.io](https://spring.io) |
+| **[Spring Security](https://spring.io/projects/spring-security)** | Authentication & Authorization | [spring.io](https://spring.io) |
+| **[Spring Data JPA](https://spring.io/projects/spring-data-jpa)** | ORM for PostgreSQL | [spring.io](https://spring.io) |
+| **[PostgreSQL](https://www.postgresql.org/)** | Database management | [postgresql.org](https://www.postgresql.org/) |
+| **[JSP & Bootstrap](https://getbootstrap.com/)** | Frontend UI | [getbootstrap.com](https://getbootstrap.com/) |
+| **[Maven](https://maven.apache.org/)** | Dependency management | [maven.apache.org](https://maven.apache.org/) |
+| **[JWT](https://jwt.io/)** | Secure authentication | [jwt.io](https://jwt.io/) |
+| **[Hibernate](https://hibernate.org/)** | ORM for database handling | [hibernate.org](https://hibernate.org/) |
 
 ---
 
@@ -56,7 +56,7 @@ The application follows a **3-tier architecture**:
 
 📂 **Project Structure:**
 ```
-Educational_Jee_App/
+Educational_Jee_App/ 
 │── src/
 │   ├── main/java/com/fstTanger/
 │   │   ├── core/
@@ -111,7 +111,7 @@ public PasswordEncoder passwordEncoder() {
 ```java
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, 
                                     FilterChain filterChain) throws ServletException, IOException {
         String token = extractToken(request);
         if (token != null && jwtUtil.validateToken(token)) {
@@ -147,7 +147,7 @@ cd springBoot-project
 2️⃣ **Set up the Database**
 Modify `application.properties` with your PostgreSQL credentials:
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/plannig_exam
+spring.datasource.url=jdbc:postgresql://localhost:5432/exam_db
 spring.datasource.username=your_db_user
 spring.datasource.password=your_db_password
 spring.jpa.hibernate.ddl-auto=update
@@ -167,9 +167,15 @@ http://localhost:8081
 ---
 
 ## 🖥️ Screenshots & UI Views
-🔹 Login Page
+🔹 [Login Page](https://github.com/sdoumi13/screenshots/login.png)
 
-🔹 Admin Dashboard
+🔹 [Admin Dashboard](https://github.com/sdoumi13/screenshots/admin_dashboard.png)
 
-🔹 Exam Management
+🔹 [Exam Management](https://github.com/sdoumi13/screenshots/exam_management.png)
+
+---
+
+📩 **Contact**
+For any inquiries or support, feel free to contact me:
+**Salma Doumi** - [salmadoumi111@gmail.com](mailto:salmadoumi111@gmail.com)
 
