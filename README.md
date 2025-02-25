@@ -167,12 +167,16 @@ http://localhost:8081
 ---
 
 ## 🖥️ Screenshots & UI Views
-🔹 [Login Page](https://github.com/sdoumi13/screenshots/login.png)
+🔹 [Login Page]
+(https://github.com/sdoumi13/screenshots/login.png)
 
-🔹 [Admin Dashboard](Educational_Jee_App/screenshots/dash_admin.png)
+🔹 [Admin Dashboard]
+(Educational_Jee_App/screenshots/dash_admin.png)
 
-🔹 [Exam Management](https://github.com/sdoumi13/screenshots/exam_management.png)
-
+🔹 [Accounts-Elemts-Exam Management]
+(Educational_Jee_App/screenshots/lst_elem_pedag.png)
+(Educational_Jee_App/screenshots/list_exams.png)
+(Educational_Jee_App/screenshots/list_accounts.png)
 ---
 
 📩 **Contact**
