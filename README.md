@@ -169,7 +169,7 @@ http://localhost:8081
 ## 🖥️ Screenshots & UI Views
 🔹 [Login Page](https://github.com/sdoumi13/screenshots/login.png)
 
-🔹 [Admin Dashboard](https://github.com/sdoumi13/screenshots/admin_dashboard.png)
+🔹 [Admin Dashboard](Educational_Jee_App/screenshots/dash_admin.png)
 
 🔹 [Exam Management](https://github.com/sdoumi13/screenshots/exam_management.png)
 
