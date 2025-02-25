@@ -147,7 +147,7 @@ cd springBoot-project
 2️⃣ **Set up the Database**
 Modify `application.properties` with your PostgreSQL credentials:
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/exam_db
+spring.datasource.url=jdbc:postgresql://localhost:5432/plannig_exam
 spring.datasource.username=your_db_user
 spring.datasource.password=your_db_password
 spring.jpa.hibernate.ddl-auto=update
