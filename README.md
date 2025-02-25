@@ -170,6 +170,7 @@ http://localhost:8081
 🔹 [Login Page](Educational_Jee_App/screenshots/login.png)
 
 🔹 [Admin Dashboard](Educational_Jee_App/screenshots/dash_admin.png)
+   - ![Elements](Educational_Jee_App/screenshots/dash_admin.png)
 
 🔹 [Accounts-Elements-Exam Management]
    - ![Elements](Educational_Jee_App/screenshots/lst_elem_pedag.png)
